@@ -9,13 +9,13 @@ public class Emplacement {
 	public Emplacement(Vegetal vegetal){
 		this.vegetal = vegetal;
 	}
-
+	
 	public Vegetal getVegetal() {
 		return vegetal;
 	}
 	
 	public String toString(){
-//		this.vegetal.dessin[this.vegetal.etat.ordinal()];
+		System.out.println(this.vegetal);
 		return null;
 	}
 }

@@ -15,7 +15,6 @@ public abstract class Vegetal {
 	}
 	
 	public void grandir(){
-		
+		this.etat = Etat.values()[this.etat.ordinal() + 1];
 	}
-	
 }

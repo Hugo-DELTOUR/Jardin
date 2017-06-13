@@ -10,24 +10,35 @@ public class JardinDEden {
 		System.out.println("Voici le jardin:");
 		j.toString(5,5);
 		
-		System.out.println("Le panier contient : ");
-		j.ajouterPanier("Tomate",5);
-		j.ajouterPanier("Carotte",5);
-		j.ajouterPanier("Betterave",5);
-		j.ajouterPanier("Ail",5);
+		
 		
 		while(true){	
 			
+			System.out.println("Le panier contient : ");
+			j.ajouterPanier("Tomate",j.qT);
+			j.ajouterPanier("Carotte",j.qC);
+			j.ajouterPanier("Betterave",j.qB);
+			j.ajouterPanier("Ail",j.qA);
 			
 			j.menu();
 			
 			Scanner scanner = new Scanner(System.in);
 			int scan = scanner.nextInt();
 			
-			switch(scan){
-				case 1 : j.semer();
+			if(scan == 1){
+				j.semer();
 			}
-				
+			else if(scan == 2){
+				j.recolter(5, 5);
+			}
+			else if(scan == 3){
+				j.saisonSuivante(5,5);
+			}
+//			else if(scan == 4){
+//				j.close();
+//			}
+			j.toString(5,5);
+			
 		}
 	}
 
