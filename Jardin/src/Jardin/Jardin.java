@@ -1,5 +1,6 @@
 package Jardin;
 
+import java.util.AbstractMap.SimpleEntry;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -101,20 +102,26 @@ public class Jardin {
 					if(emplacement[x][y].getVegetal().etat == Etat.FLEUR){
 						
 						if(emplacement[x][y].getVegetal() instanceof IRacePure){
-														
-							IRacePure.seReproduire(this.panier,emplacement[x][y].getVegetal().toString());
+							
+							((IRacePure)emplacement[x][y].getVegetal()).seReproduire(this.panier, emplacement[x][y].getVegetal().toString());
 							
 						}
-//						if(emplacement[x][y].getVegetal() instanceof IOgm){
-//							IOgm.seDupliquer(5,5);
-//						}
+						
+						if(emplacement[x][y].getVegetal() instanceof IOgm){
+							SimpleEntry<Integer, Integer> coord;
+							coord = ((IOgm)emplacement[x][y].getVegetal()).seDupliquer(5,5);
+							
+							this.emplacement[coord.getKey()][coord.getValue()]= new Emplacement(new Betterave());
+						}
 						
 						this.emplacement[x][y] = null;
 					}
 				}
 			}
 		}
-		
 	}
 	
+	public void close(){
+		System.exit(0);
+	}
 }

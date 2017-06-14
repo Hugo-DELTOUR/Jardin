@@ -34,9 +34,9 @@ public class JardinDEden {
 			else if(scan == 3){
 				j.saisonSuivante(5,5);
 			}
-//			else if(scan == 4){
-//				j.close();
-//			}
+			else if(scan == 4){
+				j.close();
+			}
 			j.toString(5,5);
 			
 		}
